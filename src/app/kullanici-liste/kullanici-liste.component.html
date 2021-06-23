@@ -1,0 +1,22 @@
+<!--<p *ngFor="let a of liste">{{a}}</p>-->
+ID : {{objem1.id}}
+<br>
+Ad : {{objem1.ad}}
+<br>
+GSM : {{objem1.gsm}}
+<br>
+{{objeList.length}}
+<hr>
+<table class="table">
+
+  <tr>
+    <th>ID</th>
+    <th>AD</th>
+    <th>GSM</th>
+  </tr>
+  <tr *ngFor="let q of objeList">
+    <td>{{q.id}}</td>
+    <td>{{q.ad}}</td>
+    <td>{{q.gsm}}</td>
+  </tr>
+</table>

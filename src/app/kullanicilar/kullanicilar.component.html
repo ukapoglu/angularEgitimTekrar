@@ -1,0 +1,78 @@
+
+{{sayi2 + sayi1}}
+{{isim + " " + soyisim}}
+<br>
+{{durum}}
+<br>
+<!--{{isimSoyisimNedir()}}-->
+<!--&lt;!&ndash;<button class="btn btn-success" (click)="durumDegister()" *ngIf="durum">Durum değiştir</button>&ndash;&gt;-->
+<!--<button class="btn btn-danger" (click)="durumDegister()" *ngIf="!durum">Durum değiştir</button>-->
+<button [ngClass]="durum ? 'btn btn-success' : 'btn btn-danger'" (click)="durumDegister(5)">Durum değiştir</button>
+<div *ngIf="durum">
+  durum doğrudur
+</div>
+<!--<table class="table table-hover">-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--    <th>Ad</th>-->
+<!--    <th>Soyad</th>-->
+<!--    <th>GSM</th>-->
+<!--    <th>Cinsiyet</th>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>1</td>-->
+<!--    <td>Utku</td>-->
+<!--    <td>Kapogğlu</td>-->
+<!--    <td>5545798</td>-->
+<!--    <td>Erkek</td>-->
+<!--  </tr>-->
+<!--</table>-->

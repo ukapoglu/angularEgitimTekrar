@@ -1,0 +1,95 @@
+<ng-template [ngIf]="state === 0">
+  <div [ngClass]="isUpdate === 1 ? 'alert alert-warning' : 'alert alert-success'" role="alert" *ngIf="isUpdate > 0">
+    Yeni kullanıcı <span *ngIf="isUpdate === 1">güncellendi</span><span *ngIf="isUpdate === 2">oluşturuldu</span>
+  </div>
+  <button class="btn btn-success" (click)="stateFn(1)">Yeni kullanıcı oluştur</button>
+  <table class="table">
+    <tr>
+      <th>İşlem</th>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Şifre</th>
+      <th>Cinsiyet</th>
+      <th>Yaş</th>
+    </tr>
+    <tr *ngFor="let u of users">
+      <td>
+        <button class="btn btn-warning" (click)="duzenleFn(u)">Düzenle</button>
+      </td>
+      <td>{{u.id}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.password}}</td>
+      <td>{{u.gender ? 'Bay' : 'Bayan'}}</td>
+      <td>{{u.age}}</td>
+    </tr>
+  </table>
+
+</ng-template>
+<ng-template [ngIf]="state===1 || state === 2">
+  <button class="btn btn-info" (click)="stateFn(0)">Listeye geri dön</button>
+  <div class="container">
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="text" class="form-control" [(ngModel)]="user.email">
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-group">
+      <label for="">Şifre</label>
+      <input type="text" class="form-control" [(ngModel)]="user.password">
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-group">
+      <label for="">Cinsiyet</label>
+      <select [(ngModel)]="user.genderDTO">
+        <option value="0">Bayan</option>
+        <option value="1">Bay</option>
+      </select>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-group">
+      <label for="">Yaş</label>
+      <input type="number" class="form-control" [(ngModel)]="user.age">
+    </div>
+  </div>
+  <div class="container">
+    <button class="btn btn-success" *ngIf="user.id === undefined" (click)="kaydetFn(false)">Kaydet</button>
+    <button class="btn btn-success" *ngIf="user.id !== undefined" (click)="kaydetFn(true)">Güncelle</button>
+  </div>
+
+</ng-template>
+<!--<ng-template [ngIf]="state===2">-->
+<!--  <button class="btn btn-info" (click)="stateFn(0)">Listeye geri dön</button>-->
+<!--  <div class="container">-->
+<!--    <div class="form-group">-->
+<!--      <label for="">Email</label>-->
+<!--      <input type="text" class="form-control" [(ngModel)]="user.email">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <div class="form-group">-->
+<!--      <label for="">Şifre</label>-->
+<!--      <input type="text" class="form-control" [(ngModel)]="user.password">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <div class="form-group">-->
+<!--      <label for="">Cinsiyet</label>-->
+<!--      <select [(ngModel)]="user.genderDTO">-->
+<!--        <option value="0">Bayan</option>-->
+<!--        <option value="1">Bay</option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <div class="form-group">-->
+<!--      <label for="">Yaş</label>-->
+<!--      <input type="number" class="form-control" [(ngModel)]="user.age">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="container">-->
+<!--    <button class="btn btn-success" (click)="updateFn()">Güncelle</button>-->
+<!--  </div>-->
+<!--</ng-template>-->
